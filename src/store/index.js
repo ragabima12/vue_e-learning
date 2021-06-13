@@ -6,13 +6,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    
+    user: {}
   },
   mutations: {
-    
+    setUserData(state, payload){
+      state.user = payload
+    }
   },
   actions: {
-    async getUserAction(state){
+    async getUserAction({ commit }){
       const accessToken = localStorage.getItem('access_token')
       const refreshToken = localStorage.getItem('refresh_token')
       const userResult = await Axios.GetUser({access_token: accessToken, refresh_token: refreshToken})
@@ -21,6 +23,7 @@ export default new Vuex.Store({
         return { error: userResult?.reason }
       }
       const userData = userResult.data
+      commit('setUserData', userData)
       return { data: userData }
     },
 
@@ -60,8 +63,18 @@ export default new Vuex.Store({
 
       const isLoginFail = !loginResult?.data
       if( isLoginFail ){
+        let loginError = 'Terjadi kesalahan saat login'
+        switch( loginResult?.reason ){
+          case 'USER_NOT_FOUND':
+            loginError = 'Akun tidak ditemukan'
+            break
+          case 'PASSWORD_NOT_MATCH':
+            loginError = 'Password tidak sesuai'
+            break
+          
+        }
         return {
-          error: loginResult?.reason || 'UNKNOWN_ERROR' 
+          error: loginError
         }
       }
 
@@ -72,6 +85,17 @@ export default new Vuex.Store({
       }
       
       return { userData: user }
+    },
+
+    async registerAction({ dispatch }, payload){
+      const registerResult = await Axios.Register(payload)
+      const isRegisterFail = !registerResult ?. data
+      if( isRegisterFail ){
+        return { error: registerResult ?. message }
+      }
+      
+      const { data: userData } = registerResult
+      return { data: userData }
     }
   },
   modules: {

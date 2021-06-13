@@ -16,6 +16,19 @@ const Login = async (bodyData) => {
   }
 }
 
+const Register = async (bodyData) => {
+  try{
+    const result = await Axios({
+      method: 'POST',
+      url: '/auth/register',
+      data: bodyData
+    })
+    return result.data
+  }catch(exception){
+    return exception ?. response.data || {}
+  }
+}
+
 const VerifyToken = async (bodyHeaders) => {
   try{
     const result = await Axios({
@@ -57,6 +70,7 @@ const GetUser = async(bodyHeaders) => {
 
 export default {
   Login,
+  Register,
   VerifyToken,
   UpdateToken,
   GetUser

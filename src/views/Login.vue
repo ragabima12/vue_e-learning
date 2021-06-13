@@ -19,10 +19,14 @@
               <h3 class="mb-1">Selamat Datang Di E-Absen</h3>
               <p>Silahkan login untuk melanjutkan absen</p>
             </v-col>
+            <v-col cols="12" v-if="errors.length > 0">
+              <v-alert type="error" v-for="(error, errorIndex) of errors" :key="errorIndex">{{ error }}</v-alert>
+            </v-col>
             <v-col cols="12" class="pb-0">
               <p class="mb-2">Username</p>
               <v-text-field
                 v-model="username"
+                :disabled="isLoading"
                 placeholder="Masukan username"
                 class="elevation-0"
                 solo
@@ -33,19 +37,21 @@
               <p class="mb-0">Password</p>
               <v-text-field
                 v-model="password"
+                :disabled="isLoading"
                 placeholder="Masukan Password"
-                type="password"
+                :type="!isShowedPassword && 'password' || 'text' "
                 class="elevation-0"
                 solo
                 :rules="rules.password"
               >
                 <template #append>
-                  <span style="font-size: 0.85rem">Tampilkan</span>
+                  <span style="font-size: 0.85rem" @click="isShowedPassword = !isShowedPassword"> {{ isShowedPassword && 'Sembunyikan' || 'Tampilkan' }} </span>
                 </template>
               </v-text-field>
             </v-col>
             <v-col cols="12" class="pt-0">
-              <v-btn dark color="primary" large block @click="submitForm">LOGIN</v-btn>
+              <v-btn dark color="primary" large block @click="submitForm" :loading="isLoading">LOGIN</v-btn>
+              <v-btn text block large class="my-2" color="primary" @click="$router.push('/register')">Daftar</v-btn>
             </v-col>
           </v-row>
         </v-col>
@@ -63,6 +69,8 @@ export default {
     return {
       username: '',
       password: '',
+      isLoading: false,
+      isShowedPassword: false,
       errors: [],
       rules: {
         username: [ val => !validator.isEmpty(val) || 'Username tidak boleh kosong' ],
@@ -77,14 +85,23 @@ export default {
       this.$refs.login_form.validate()
     },
     async submitForm(){
+      this.isLoading = true
+      this.errors = []
       this.validateForm()
+
       const { username, password } = this
       const isEmptyBoth = username.length === 0 && password.length === 0
-      if( isEmptyBoth ) return false
+      if( isEmptyBoth ){  
+         this.isLoading = false
+         return false
+      }
       
       const result = await this.$store.dispatch('loginAction', {username, password})
       const isFailLogin = result?.error
-      if( isFailLogin ) return this.errors.push(result.error)
+      if( isFailLogin ) {
+        this.isLoading = false
+        return this.errors.push(result.error)
+      }
 
       const { role } = result.userData
 

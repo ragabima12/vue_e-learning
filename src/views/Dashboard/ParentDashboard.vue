@@ -89,7 +89,7 @@
                 <h3>Cara Memasak</h3>
                 <p class="mb-0">Tenggat 20 Nov 2017</p>
               </div>
-              <v-chip color="red white--text" class="ml-auto"
+              <v-chip color="red white--text" class="ml-auto" @click="logout"
                 >Belum Selesai</v-chip
               >
             </div>
@@ -137,7 +137,12 @@ export default {
     showDialogLogout() {
       this.ShowLogoutDialog = true;
     },
-  },
+    logout(){
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('refresh_token')
+      this.$router.push('/login')
+    }
+  }
 };
 </script>
 
