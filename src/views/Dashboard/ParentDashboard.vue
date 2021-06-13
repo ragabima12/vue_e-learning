@@ -1,27 +1,8 @@
 <template>
-  <div class="overflow-hidden">
-    <v-app-bar absolute color="white" elevate-on-scroll>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Title</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
+  <div>
     <v-row class="mt-3 mx-2">
       <!-- App Bar -->
-      <!-- <v-col cols="6">
+      <v-col cols="6">
         <h2>Beranda</h2>
       </v-col>
       <v-col class="text-right d-flex justify-end" cols="6">
@@ -50,15 +31,15 @@
             </v-card-actions>
           </v-card>
         </v-menu>
-      </v-col> -->
+      </v-col>
       <!-- App Bar End -->
 
       <!-- List Work -->
       <v-col class="mt-4" cols="12">
         <h3 class="font-weight-medium mb-3">Tugas Yang Belum Beres</h3>
         <v-card>
-          <v-card-text>
-            <div class="d-flex align-center">
+          <v-card-text class="v-card__text--scrollable">
+            <div class="d-flex align-center mb-3">
               <div>
                 <h3>Tutorial Origami Ayam</h3>
                 <p class="mb-0">Tenggat 19 Nov 2017</p>
@@ -67,27 +48,41 @@
                 >Belum Selesai</v-chip
               >
             </div>
-          </v-card-text>
-        </v-card>
-        <v-card class="mt-4">
-          <v-card-text>
-            <div class="d-flex align-center">
+            <v-divider></v-divider>
+            <div class="d-flex align-center mt-3 mb-3">
               <div>
-                <h3>Tutorial Origami Ikan</h3>
-                <p class="mb-0">Tenggat 20 Nov 2017</p>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
               </div>
               <v-chip color="red white--text" class="ml-auto"
                 >Belum Selesai</v-chip
               >
             </div>
-          </v-card-text>
-        </v-card>
-        <v-card class="mt-4">
-          <v-card-text>
-            <div class="d-flex align-center">
+            <v-divider></v-divider>
+            <div class="d-flex align-center mt-3 mb-3">
               <div>
-                <h3>Cara Memasak</h3>
-                <p class="mb-0">Tenggat 20 Nov 2017</p>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
+              </div>
+              <v-chip color="red white--text" class="ml-auto"
+                >Belum Selesai</v-chip
+              >
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex align-center mt-3 mb-3">
+              <div>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
+              </div>
+              <v-chip color="red white--text" class="ml-auto"
+                >Belum Selesai</v-chip
+              >
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex align-center mt-3 mb-3">
+              <div>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
               </div>
               <v-chip color="red white--text" class="ml-auto" @click="logout"
                 >Belum Selesai</v-chip
@@ -99,8 +94,73 @@
       <!-- List Work End -->
 
       <!-- List Class -->
-      <v-col cols="12">
+      <v-col class="pb-0" cols="12">
         <h3 class="font-medium mb-3">List Kelas</h3>
+      </v-col>
+      <v-col class="pt-0" cols="12">
+        <v-card>
+          <v-card-text class="v-card__text--scrollable">
+            <div class="d-flex align-center mb-3">
+              <div>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
+              </div>
+              <v-avatar
+                size="50"
+                color="primary white--text"
+                class="ml-auto"
+              ></v-avatar>
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex mt-3 mb-3 align-center">
+              <div>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
+              </div>
+              <v-avatar
+                size="50"
+                color="primary white--text"
+                class="ml-auto"
+              ></v-avatar>
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex mt-3 mb-3 align-center">
+              <div>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
+              </div>
+              <v-avatar
+                size="50"
+                color="primary white--text"
+                class="ml-auto"
+              ></v-avatar>
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex mt-3 mb-3 align-center">
+              <div>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
+              </div>
+              <v-avatar
+                size="50"
+                color="primary white--text"
+                class="ml-auto"
+              ></v-avatar>
+            </div>
+            <v-divider></v-divider>
+            <div class="d-flex mt-3 align-center">
+              <div>
+                <h3>Tutorial Origami Ayam</h3>
+                <p class="mb-0">Tenggat 19 Nov 2017</p>
+              </div>
+              <v-avatar
+                size="50"
+                color="primary white--text"
+                class="ml-auto"
+              ></v-avatar>
+            </div>
+          </v-card-text>
+        </v-card>
       </v-col>
     </v-row>
     <JoinClassroom
