@@ -23,7 +23,12 @@
 </template>
 
 <script>
-export default {};
+import AuthMixin from '../../mixins/auth'
+
+export default {
+  name: 'Test',
+  mixins: [AuthMixin]
+};
 </script>
 
 <style>

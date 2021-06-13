@@ -3,13 +3,18 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Confirm from '../views/Confirm-Attendance'
 import Register from '../views/Register.vue'
-import Homepage from '../views/Homepage.vue'
+import ParentDashboard from '../views/Dashboard/ParentDashboard'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/login',
     name: 'Login',
     component: Login
   },
@@ -24,9 +29,9 @@ const routes = [
     component: Register
   },
   {
-    path: '/homepage',
-    name: 'Homepage',
-    component: Homepage
+    path: '/dashboard/parent',
+    name: 'Parent Dashboard',
+    component: ParentDashboard
   },
 ]
 
