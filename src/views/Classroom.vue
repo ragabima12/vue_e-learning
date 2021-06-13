@@ -2,38 +2,11 @@
   <div>
     <v-row class="mt-3 mx-2">
       <v-col class="d-flex justify-start pl-0" cols="8">
-        <v-btn class="mr-3" icon><v-icon>mdi-arrow-left</v-icon></v-btn>
+        <v-btn class="mr-3" icon @click="$router.push('/dashboard/parent')"><v-icon>mdi-arrow-left</v-icon></v-btn>
         <h2>Kelas</h2>
       </v-col>
-      <v-col class="text-right d-flex justify-end" cols="4">
-        <v-btn @click="showDialogJoin" color="danger" icon>
-          <v-icon>mdi-logout-variant</v-icon>
-        </v-btn>
-        <v-menu offset-y offset-x max-width="600">
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn v-bind="attrs" v-on="on" color="danger" icon>
-              <v-avatar color="primary" size="24"
-                ><span class="white--text">Av</span></v-avatar
-              >
-            </v-btn>
-          </template>
-          <v-card>
-            <v-card-text>
-              <v-avatar class="mb-3" size="44" color="primary"
-                ><span class="white--text text-h5">Av</span></v-avatar
-              >
-              <h3>Raga Bima Jr</h3>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn @click="showDialogLogout" block color="primary"
-                >Logout</v-btn
-              >
-            </v-card-actions>
-          </v-card>
-        </v-menu>
-      </v-col>
       <v-col class="mt-4" cols="12">
-        <h3 class="font-weight-medium">List Tugas Kelas Biologi</h3>
+        <h3 class="font-weight-medium">List Tugas Kelas Kesenian</h3>
       </v-col>
       <v-col class="pt-0" cols="12">
         <v-card>

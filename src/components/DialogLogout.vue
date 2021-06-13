@@ -24,10 +24,10 @@
         <v-card-actions class="mb-2">
           <v-row>
             <v-col cols="6">
-              <v-btn outlined color="red" large block> Batal</v-btn>
+              <v-btn outlined color="red" large block @click="isClosedDialog"> Batal</v-btn>
             </v-col>
             <v-col cols="6">
-              <v-btn large color="red" dark block> Logout</v-btn>
+              <v-btn large color="red" dark block @click="logout"> Logout</v-btn>
             </v-col>
           </v-row>
         </v-card-actions>
@@ -43,6 +43,9 @@ export default {
     isClosedDialog() {
       this.$emit("closed", true);
     },
+    logout(){
+      this.$emit("logout", true)
+    }
   },
 };
 </script>

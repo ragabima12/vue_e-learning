@@ -19,7 +19,7 @@
           <label class="mb-2" for="JoinClass">Gabung Kelas</label>
           <v-text-field solo placeholder="Masukan Kode Kelas"></v-text-field>
         </v-card-text>
-        <v-card-actions>
+        <v-card-actions class="pb-8">
           <v-btn dark color="primary" block large>GABUNG</v-btn>
         </v-card-actions>
       </v-card>

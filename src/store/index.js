@@ -6,11 +6,47 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    user: {}
+    user: {},
+    selected_task: {},
+    task_list: [{
+      task_title: 'Membuat Tutorial Origami',
+      task_description: 'Buatlah sebuah origami dengan bentuk bebas dan dikumpulkan dalam bentuk gambar',
+      task_images: ['https://www.wikihow.com/images/b/b2/Fold-an-Origami-Star-(Shuriken)-Step-19-Version-3.jpg', 'https://cdn1-production-images-kly.akamaized.net/rOnm0MiUH7-Zil9OEYyhsceioUg=/469x260/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3361157/original/076244000_1611750592-pexels-la-mm-1582782.jpg', 'https://img.freepik.com/free-vector/japanese-origami-animals-flat-illustration-set-cartoon-polygon-paper-horse-hare-bird-frog-fish-cat-isolated-vector-illustration-collection-modern-hobby-relaxation-concept_74855-10095.jpg?size=626&ext=jpg&ga=GA1.2.1419404830.1622592000'],
+      is_submitted: false,
+      task_duedate: Date.now(),
+      createdAt: Date.now()
+    },
+    {
+      task_title: 'Membuat Tutorial Origami',
+      task_description: 'Buatlah sebuah origami dengan bentuk bebas dan dikumpulkan dalam bentuk gambar',
+      task_images: ['https://www.wikihow.com/images/b/b2/Fold-an-Origami-Star-(Shuriken)-Step-19-Version-3.jpg', 'https://cdn1-production-images-kly.akamaized.net/rOnm0MiUH7-Zil9OEYyhsceioUg=/469x260/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3361157/original/076244000_1611750592-pexels-la-mm-1582782.jpg', 'https://img.freepik.com/free-vector/japanese-origami-animals-flat-illustration-set-cartoon-polygon-paper-horse-hare-bird-frog-fish-cat-isolated-vector-illustration-collection-modern-hobby-relaxation-concept_74855-10095.jpg?size=626&ext=jpg&ga=GA1.2.1419404830.1622592000'],
+      is_submitted: false,
+      task_duedate: Date.now(),
+      createdAt: Date.now()
+    },
+    {
+      task_title: 'Membuat Tutorial Origami',
+      task_description: 'Buatlah sebuah origami dengan bentuk bebas dan dikumpulkan dalam bentuk gambar',
+      task_images: ['https://www.wikihow.com/images/b/b2/Fold-an-Origami-Star-(Shuriken)-Step-19-Version-3.jpg', 'https://cdn1-production-images-kly.akamaized.net/rOnm0MiUH7-Zil9OEYyhsceioUg=/469x260/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3361157/original/076244000_1611750592-pexels-la-mm-1582782.jpg', 'https://img.freepik.com/free-vector/japanese-origami-animals-flat-illustration-set-cartoon-polygon-paper-horse-hare-bird-frog-fish-cat-isolated-vector-illustration-collection-modern-hobby-relaxation-concept_74855-10095.jpg?size=626&ext=jpg&ga=GA1.2.1419404830.1622592000'],
+      is_submitted: false,
+      task_duedate: Date.now(),
+      createdAt: Date.now()
+    },
+    {
+      task_title: 'Membuat Tutorial Origami',
+      task_description: 'Buatlah sebuah origami dengan bentuk bebas dan dikumpulkan dalam bentuk gambar',
+      task_images: ['https://www.wikihow.com/images/b/b2/Fold-an-Origami-Star-(Shuriken)-Step-19-Version-3.jpg', 'https://cdn1-production-images-kly.akamaized.net/rOnm0MiUH7-Zil9OEYyhsceioUg=/469x260/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3361157/original/076244000_1611750592-pexels-la-mm-1582782.jpg', 'https://img.freepik.com/free-vector/japanese-origami-animals-flat-illustration-set-cartoon-polygon-paper-horse-hare-bird-frog-fish-cat-isolated-vector-illustration-collection-modern-hobby-relaxation-concept_74855-10095.jpg?size=626&ext=jpg&ga=GA1.2.1419404830.1622592000'],
+      is_submitted: false,
+      task_duedate: Date.now(),
+      createdAt: Date.now()
+    }]
   },
   mutations: {
     setUserData(state, payload){
       state.user = payload
+    },
+    setSelectedTask(state, payload){
+      state.selected_task = payload
     }
   },
   actions: {

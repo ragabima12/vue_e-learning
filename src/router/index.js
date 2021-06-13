@@ -1,34 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/Login.vue'
-import Confirm from '../views/Confirm-Attendance'
-import Register from '../views/Register.vue'
+import Login from '../views/Login'
+import ConfirmAttendance from '../views/AttendanceConfirm'
+import Register from '../views/Register'
 import ParentDashboard from '../views/Dashboard/ParentDashboard'
-import Class from '../views/Class.vue'
-import DetailWork from '../views/DetailWork.vue'
-import Permission from '../views/Permission.vue'
+import Classroom from '../views/Classroom'
+import TaskDetail from '../views/TaskDetail'
+import Absence from '../views/Absence.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Login',
+    name: 'main',
     component: Login
   },
   {
     path: '/login',
-    name: 'Login',
+    name: 'login',
     component: Login
   },
   {
-    path: '/confirm',
-    name: 'Confirm',
-    component: Confirm
+    path: '/dashboard/parent/confirm/attendance',
+    name: 'confirm',
+    component: ConfirmAttendance
   },
   {
     path: '/register',
-    name: 'Register',
+    name: 'register',
     component: Register
   },
   {
@@ -37,19 +37,19 @@ const routes = [
     component: ParentDashboard
   },
   {
-    path: '/class',
-    name: 'Class',
-    component: Class
+    path: '/dashboard/parent/classroom',
+    name: 'classroom',
+    component: Classroom
   },
   {
-    path: '/detail',
-    name: 'Work Detail',
-    component: DetailWork
+    path: '/dashboard/parent/task/detail',
+    name: 'task detail',
+    component: TaskDetail
   },
   {
-    path: '/permission',
-    name: 'Permission',
-    component: Permission
+    path: '/dashboard/parent/absence',
+    name: 'Absence',
+    component: Absence
   },
 
 ]
