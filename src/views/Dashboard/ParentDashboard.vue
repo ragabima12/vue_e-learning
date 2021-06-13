@@ -1,11 +1,6 @@
 <template>
   <div class="overflow-hidden">
-    <v-app-bar
-      absolute
-      color="white"
-      elevate-on-scroll
-      scroll-target="#scrolling-techniques-7"
-    >
+    <v-app-bar absolute color="white" elevate-on-scroll>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
       <v-toolbar-title>Title</v-toolbar-title>
@@ -120,8 +115,9 @@
 </template>
 
 <script>
-import JoinClassroom from "../components/DialogJoinClass.vue";
-import LogoutDialog from "../components/DialogLogout.vue";
+import JoinClassroom from "../../components/DialogJoinClass.vue";
+import LogoutDialog from "../../components/DialogLogout.vue";
+import AuthMixin from "../../mixins/auth";
 export default {
   data() {
     return {
@@ -129,6 +125,7 @@ export default {
       ShowLogoutDialog: false,
     };
   },
+  mixins: [AuthMixin],
   components: {
     JoinClassroom,
     LogoutDialog,
